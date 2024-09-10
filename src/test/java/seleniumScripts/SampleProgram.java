@@ -1,17 +1,19 @@
 package seleniumScripts;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Exercise1 {
+public class SampleProgram {
 
 	public static void main(String[] args) {
 		System.setProperty("webDriver.chrome.driver", "E:\\Downloads\\Setups\\chromedriver-win64\\chromedriver-win64");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://demowebshop.tricentis.com/");
 		driver.manage().window().maximize();
+//		driver.findElement(By.linkText("Log in")).click();
+//		driver.findElement(By.id("Email")).sendKeys("komorebimiku45@gmail.com");
+//		driver.findElement(By.id("Password")).sendKeys("Nagareboshi45*");
 		String title = driver.getTitle();
 		System.out.println("Page Title: " + title);
 		int titleLength = title.length();
@@ -27,7 +29,7 @@ public class Exercise1 {
 		int pageSourceLength = pageSource.length();
 		System.out.println("Page Source Length: " + pageSourceLength);
 		driver.quit();
-		driver.quit();
+
 	}
 
 }
