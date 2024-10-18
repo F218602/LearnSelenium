@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testngScripts.SampleTestNg">
+      <class name="demoworkshopTest.OrderTest">
         <methods>
-          <include name="searchTest"/>
-          <include name="navigateToPage"/>
           <include name="setUp"/>
-          <include name="postTestActions"/>
+          <include name="testOrderProcess"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- testngScripts.SampleTestNg -->
+      </class> <!-- demoworkshopTest.OrderTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

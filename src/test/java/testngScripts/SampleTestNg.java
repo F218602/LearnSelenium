@@ -9,6 +9,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+
 import utils.ImageUtils;
 
 import java.io.IOException;
@@ -60,5 +62,13 @@ public class SampleTestNg {
 	        driver.quit();
 	        System.out.println("AfterClass: Browser closed and resources cleaned up.");
 	    }
-		
+	    
+	    
+//	    @DataProvider
+//	    public object[][] dp{
+//	    	return new object [] [] {
+//	    		new object[] {1, "vnjvf"}
+//	    		new object[] {2, "vjfnvj"}
+//	    	};
+//		
 	}
