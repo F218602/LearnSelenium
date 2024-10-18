@@ -2,6 +2,7 @@ package demoworkshopPages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -19,8 +20,9 @@ public class HomePage {
     WebDriver driver;
 
     // Locate the first listbox containing categories
-    @FindBy(xpath = "(//div[@class='listbox'])[1]//a")
-    List<WebElement> categories;
+    WebElement firstListbox = driver.findElement(By.xpath("(//div[@class='listbox'])[1]"));
+	List<WebElement> links = firstListbox.findElements(By.xpath(".//a"));
+	
 
     // Locate the link to "Build your own expensive computer"
     @FindBy(linkText = "Build your own expensive computer")
@@ -33,12 +35,12 @@ public class HomePage {
 
     // Method to print the categories and return the count
     public int printCategories() {
-        System.out.println("CATEGORIES");
-        for (WebElement category : categories) {
-            System.out.println(category.getText());
-        }
-        System.out.println("Number of categories: " + categories.size());
-        return categories.size();
+    	System.out.println("CATEGORIES");
+    	for (WebElement link : links) {
+    	    System.out.println(link.getText());
+    	}
+        System.out.println("Number of categories: " + links.size());
+        return links.size();
     }
 
     // Method to scroll the page

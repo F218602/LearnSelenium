@@ -7,8 +7,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import demoworkshopPages.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.Random;
+import org.apache.log4j.Logger;
 
 public class OrderTest {
+    private static final Logger logger = Logger.getLogger(OrderTest.class);
     WebDriver driver;
     LoginPage loginPage;
     HomePage homePage;
@@ -16,12 +22,18 @@ public class OrderTest {
     CartSummaryPage cartSummaryPage;
     CheckoutPage checkoutPage;
     OrderConfirmationPage orderConfirmationPage;
+    
+    Properties properties = new Properties();
 
     @BeforeTest
-    public void setUp() {
-    	String userHome = System.getProperty("user.home");
-    	String chromeDriverPath = userHome + "\\eclipse\\Selenium\\LearnSelenium\\Drivers\\chromedriver-win64\\chromedriver.exe";
-    	System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+    public void setUp() throws IOException {
+        // Load properties file
+        FileInputStream inputStream = new FileInputStream("C:\\Users\\Jeni\\eclipse\\Selenium\\LearnSelenium\\src\\test\\java\\resources\\testData.properties");
+        properties.load(inputStream);
+        
+        String userHome = System.getProperty("user.home");
+        String chromeDriverPath = userHome + "\\eclipse\\Selenium\\LearnSelenium\\Drivers\\chromedriver-win64\\chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://demowebshop.tricentis.com/login");
@@ -32,36 +44,49 @@ public class OrderTest {
         cartSummaryPage = new CartSummaryPage(driver);
         checkoutPage = new CheckoutPage(driver);
         orderConfirmationPage = new OrderConfirmationPage(driver);
+        
+        logger.info("Browser launched and navigated to login page.");
     }
 
     @Test
     public void testOrderProcess() {
         // Login Page
-        loginPage.login("komorebimiku45@gmail.com", "Nagareboshi45*");
-        System.out.println("Login Successful");
+        loginPage.login(properties.getProperty("login.email"), properties.getProperty("login.password"));
+        logger.info("Login Successful");
 
         // Home Page
         homePage.printCategories();
         homePage.scrollPage();
         homePage.takeScreenshot("screenshot");
         homePage.clickExpensiveComputer();
-        System.out.println("Build Your Own Expensive Computer Clicked");
+        logger.info("Build Your Own Expensive Computer Clicked");
 
         // Product Page
         productPage.configureProduct();
-        productPage.setQuantity("2");
+
+        // Randomly select quantity
+        String selectedQuantity = getRandomValue(properties.getProperty("product.quantities").split(","));
+        productPage.setQuantity(selectedQuantity);
         productPage.addToCart();
-        System.out.println("Product added to cart");
+        logger.info("Product added to cart with quantity: " + selectedQuantity);
 
         // Cart Summary Page
         cartSummaryPage.goToCart();
-        cartSummaryPage.selectCountry("United Kingdom");
+        
+        // Randomly select shipping details
+        String selectedCountry = getRandomValue(properties.getProperty("shipping.countries").split(","));
+        cartSummaryPage.selectCountry(selectedCountry);
         cartSummaryPage.agreeToTerms();
         cartSummaryPage.proceedToCheckout();
-        System.out.println("Proceed to checkout");
+        logger.info("Proceed to checkout for country: " + selectedCountry);
 
         // Checkout Page
-        checkoutPage.fillBillingDetails("United Kingdom", "Winchester", "AA Road", "SO22 0XY", "07442345678");
+        String selectedCity = getRandomValue(properties.getProperty("shipping.cities").split(","));
+        String selectedAddress = getRandomValue(properties.getProperty("shipping.addresses").split(","));
+        String selectedPostalCode = getRandomValue(properties.getProperty("shipping.postalCodes").split(","));
+        String selectedPhone = getRandomValue(properties.getProperty("shipping.phones").split(","));
+
+        checkoutPage.fillBillingDetails(selectedCountry, selectedCity, selectedAddress, selectedPostalCode, selectedPhone);
         checkoutPage.continueCheckout();
         checkoutPage.continueToShipping();
         checkoutPage.continueToShippingMethod();
@@ -69,16 +94,22 @@ public class OrderTest {
         checkoutPage.continueToPaymentInfo();        
         checkoutPage.confirmOrder();
         
-
         // Order Confirmation Page
         Assert.assertEquals(orderConfirmationPage.getOrderConfirmationMessage(), "Your order has been successfully processed!");
         String orderId = orderConfirmationPage.getOrderNumber();
-        System.out.println("Order ID: " + orderId);
+        logger.info("Order ID: " + orderId);
+    }
+
+    // Helper method to get a random value from an array
+    private String getRandomValue(String[] array) {
+        Random random = new Random();
+        int index = random.nextInt(array.length);
+        return array[index];
     }
 
     @AfterTest
     public void tearDown() {
         driver.quit();
+        logger.info("Browser closed.");
     }
 }
-
