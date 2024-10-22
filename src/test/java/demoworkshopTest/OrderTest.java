@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.Random;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 public class OrderTest {
     private static final Logger logger = Logger.getLogger(OrderTest.class);
@@ -24,14 +25,20 @@ public class OrderTest {
     OrderConfirmationPage orderConfirmationPage;
     
     Properties properties = new Properties();
-
+    String userHome = System.getProperty("user.home");
+    
     @BeforeTest
     public void setUp() throws IOException {
         // Load properties file
-        FileInputStream inputStream = new FileInputStream("C:\\Users\\Jeni\\eclipse\\Selenium\\LearnSelenium\\src\\test\\java\\resources\\testData.properties");
+        String propertyFilePath = userHome + "\\eclipse\\Selenium\\LearnSelenium\\src\\test\\java\\resources\\testData.properties";
+        FileInputStream inputStream = new FileInputStream(propertyFilePath);
         properties.load(inputStream);
+
+        // Load log4j properties
+        String log4jPropertyFilePath = userHome + "\\eclipse\\Selenium\\LearnSelenium\\log4j.properties";
+        PropertyConfigurator.configure(log4jPropertyFilePath);
         
-        String userHome = System.getProperty("user.home");
+        // Driver path
         String chromeDriverPath = userHome + "\\eclipse\\Selenium\\LearnSelenium\\Drivers\\chromedriver-win64\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver();

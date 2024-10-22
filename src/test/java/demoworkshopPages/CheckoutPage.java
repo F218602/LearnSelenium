@@ -90,14 +90,14 @@ public class CheckoutPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(continuePaymentInfoButton)); 
         continuePaymentInfoButton.click();
-        System.out.println("16 Confirm Order - Successful");
+        System.out.println("16 Confirm Payment - Successful");
     }
     
     public void confirmOrder() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(confirmOrderButton)); 
         confirmOrderButton.click();
-        System.out.println("16 Confirm Order - Successful");
+        System.out.println("17 Confirm Order - Successful");
     }
 
 }

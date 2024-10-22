@@ -1,0 +1,7 @@
+2024-10-22 23:59:20,138  INFO [main] OrderTest:55 - Browser launched and navigated to login page.
+2024-10-22 23:59:20,851  INFO [main] OrderTest:62 - Login Successful
+2024-10-22 23:59:22,508  INFO [main] OrderTest:69 - Build Your Own Expensive Computer Clicked
+2024-10-22 23:59:22,810  INFO [main] OrderTest:78 - Product added to cart with quantity: 2
+2024-10-22 23:59:24,841  INFO [main] OrderTest:88 - Proceed to checkout for country: United Kingdom
+2024-10-22 23:59:30,279  INFO [main] OrderTest:107 - Order ID: 1814230
+2024-10-22 23:59:30,582  INFO [main] OrderTest:120 - Browser closed.

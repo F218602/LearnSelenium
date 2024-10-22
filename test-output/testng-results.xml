@@ -1,88 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-18T15:47:59 BST" name="Default suite" finished-at="2024-10-18T15:48:09 BST" duration-ms="10160">
+  <suite started-at="2024-10-22T23:59:17 BST" name="Default suite" finished-at="2024-10-22T23:59:30 BST" duration-ms="13499">
     <groups>
     </groups>
-    <test started-at="2024-10-18T15:47:59 BST" name="Default test" finished-at="2024-10-18T15:48:09 BST" duration-ms="10160">
+    <test started-at="2024-10-22T23:59:17 BST" name="Default test" finished-at="2024-10-22T23:59:30 BST" duration-ms="13499">
       <class name="demoworkshopTest.OrderTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:demoworkshopTest.OrderTest@1d2adfbe]" started-at="2024-10-18T15:47:59 BST" name="setUp" finished-at="2024-10-18T15:48:03 BST" duration-ms="4688" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:demoworkshopTest.OrderTest@fbd1f6]" started-at="2024-10-22T23:59:17 BST" name="setUp" finished-at="2024-10-22T23:59:20 BST" duration-ms="3051" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testOrderProcess()[pri:0, instance:demoworkshopTest.OrderTest@1d2adfbe]" started-at="2024-10-18T15:48:03 BST" name="testOrderProcess" finished-at="2024-10-18T15:48:09 BST" duration-ms="5178" status="FAIL">
-          <exception class="org.openqa.selenium.JavascriptException">
-            <message>
-              <![CDATA[javascript error: {"status":11,"value":"Element is not currently visible and may not be manipulated"}
-  (Session info: chrome=129.0.6668.60)
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.4'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [dd4689f981c651d557c4944e4f6e2799, clickElement {id=f.F7BB10C4CBDE1CFBC9EF03ABFD5AA0DF.d.E09E4A8322FFEEFBDB3B65F3D8336EC5.e.187}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.60, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\Jeni\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:2963}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:2963/devtool..., se:cdpVersion: 129.0.6668.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on windows (dd4689f981c651d557c4944e4f6e2799)] -> id: BillingNewAddress_CountryId]] -> xpath: .//option[normalize-space(.) = "United Kingdom"]]
-Session ID: dd4689f981c651d557c4944e4f6e2799]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: {"status":11,"value":"Element is not currently visible and may not be manipulated"}
-  (Session info: chrome=129.0.6668.60)
-Build info: version: '4.24.0', revision: '748ffc9bc3'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.4'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [dd4689f981c651d557c4944e4f6e2799, clickElement {id=f.F7BB10C4CBDE1CFBC9EF03ABFD5AA0DF.d.E09E4A8322FFEEFBDB3B65F3D8336EC5.e.187}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.60, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\Jeni\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:2963}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:2963/devtool..., se:cdpVersion: 129.0.6668.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on windows (dd4689f981c651d557c4944e4f6e2799)] -> id: BillingNewAddress_CountryId]] -> xpath: .//option[normalize-space(.) = "United Kingdom"]]
-Session ID: dd4689f981c651d557c4944e4f6e2799
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at org.openqa.selenium.support.ui.Select.setSelected(Select.java:315)
-at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:119)
-at demoworkshopPages.CheckoutPage.fillBillingDetails(CheckoutPage.java:55)
-at demoworkshopTest.OrderTest.testOrderProcess(OrderTest.java:89)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.JavascriptException -->
+        <test-method signature="testOrderProcess()[pri:0, instance:demoworkshopTest.OrderTest@fbd1f6]" started-at="2024-10-22T23:59:20 BST" name="testOrderProcess" finished-at="2024-10-22T23:59:30 BST" duration-ms="10124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testOrderProcess -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:demoworkshopTest.OrderTest@1d2adfbe]" started-at="2024-10-18T15:48:09 BST" name="tearDown" finished-at="2024-10-18T15:48:09 BST" duration-ms="249" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:demoworkshopTest.OrderTest@fbd1f6]" started-at="2024-10-22T23:59:30 BST" name="tearDown" finished-at="2024-10-22T23:59:30 BST" duration-ms="294" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

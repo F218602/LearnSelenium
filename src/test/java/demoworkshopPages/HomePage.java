@@ -8,7 +8,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,9 +18,7 @@ import java.util.List;
 public class HomePage {
     WebDriver driver;
 
-    // Locate the first listbox containing categories
-    WebElement firstListbox = driver.findElement(By.xpath("(//div[@class='listbox'])[1]"));
-	List<WebElement> links = firstListbox.findElements(By.xpath(".//a"));
+    
 	
 
     // Locate the link to "Build your own expensive computer"
@@ -35,6 +32,9 @@ public class HomePage {
 
     // Method to print the categories and return the count
     public int printCategories() {
+    	// Locate the first listbox containing categories
+        WebElement firstListbox = driver.findElement(By.xpath("(//div[@class='listbox'])[1]"));
+    	List<WebElement> links = firstListbox.findElements(By.xpath(".//a"));
     	System.out.println("CATEGORIES");
     	for (WebElement link : links) {
     	    System.out.println(link.getText());
@@ -91,31 +91,6 @@ public class HomePage {
         return screenshotPath;
     }
 
-//    private String getUniqueScreenshotPath(String basePath) {
-//        int screenshotNumber = 1;
-//        String screenshotPath;
-//
-//        do {
-//            screenshotPath = basePath.replace(".png", "_" + screenshotNumber + ".png");
-//            screenshotNumber++;
-//        } while (new File(screenshotPath).exists());
-//
-//        return screenshotPath;
-//    }   
-    
-
-//    public void takeScreenshot(String filePath) {
-//        TakesScreenshot ts = (TakesScreenshot) driver;
-//        File srcFile = ts.getScreenshotAs(OutputType.FILE);
-//        File destFile = new File(filePath);
-//        try {
-//            Files.copy(srcFile.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-//            System.out.println("Screenshot taken successfully");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            System.out.println("Failed to take screenshot");
-//        }
-//    }
 
     // Method to click on the "Build your own expensive computer" link
     public void clickExpensiveComputer() {
@@ -123,10 +98,5 @@ public class HomePage {
         System.out.println("Clicked on 'Build your own expensive computer' successfully");
     }
 
-//    // Method to hover over a specific element (cart or other elements if needed)
-//    public void hoverOverElement(WebElement element) {
-//        Actions actions = new Actions(driver);
-//        actions.moveToElement(element).perform();
-//        System.out.println("Hovered over element successfully");
-//    }
+
 }
