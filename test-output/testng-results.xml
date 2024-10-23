@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-22T23:59:17 BST" name="Default suite" finished-at="2024-10-22T23:59:30 BST" duration-ms="13499">
+  <suite started-at="2024-10-23T02:14:03 BST" name="Default suite" finished-at="2024-10-23T02:14:16 BST" duration-ms="13001">
     <groups>
     </groups>
-    <test started-at="2024-10-22T23:59:17 BST" name="Default test" finished-at="2024-10-22T23:59:30 BST" duration-ms="13499">
+    <test started-at="2024-10-23T02:14:03 BST" name="Default test" finished-at="2024-10-23T02:14:16 BST" duration-ms="13001">
       <class name="demoworkshopTest.OrderTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:demoworkshopTest.OrderTest@fbd1f6]" started-at="2024-10-22T23:59:17 BST" name="setUp" finished-at="2024-10-22T23:59:20 BST" duration-ms="3051" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:demoworkshopTest.OrderTest@77847718]" started-at="2024-10-23T02:14:03 BST" name="setUp" finished-at="2024-10-23T02:14:06 BST" duration-ms="2671" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testOrderProcess()[pri:0, instance:demoworkshopTest.OrderTest@fbd1f6]" started-at="2024-10-22T23:59:20 BST" name="testOrderProcess" finished-at="2024-10-22T23:59:30 BST" duration-ms="10124" status="PASS">
+        <test-method signature="testOrderProcess()[pri:0, instance:demoworkshopTest.OrderTest@77847718]" started-at="2024-10-23T02:14:06 BST" name="testOrderProcess" finished-at="2024-10-23T02:14:15 BST" duration-ms="9557" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testOrderProcess -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:demoworkshopTest.OrderTest@fbd1f6]" started-at="2024-10-22T23:59:30 BST" name="tearDown" finished-at="2024-10-22T23:59:30 BST" duration-ms="294" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:demoworkshopTest.OrderTest@77847718]" started-at="2024-10-23T02:14:15 BST" name="tearDown" finished-at="2024-10-23T02:14:16 BST" duration-ms="741" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
